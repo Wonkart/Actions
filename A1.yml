@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: FetchMarketFX
   description: Devuelve tipos de cambio spot (base EUR) y precios BTC/ETH.
