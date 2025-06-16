@@ -8,6 +8,7 @@ servers:
 paths:
   /latest:
     get:
+      operationId: getLatestRates
       summary: Tipos de cambio respecto a la divisa base.
       parameters:
         - in: query
