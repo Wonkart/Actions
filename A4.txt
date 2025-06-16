@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  title: QuickStripeQuote
+  description: Calcula la comisión y el neto a recibir en una transacción Stripe.
+  version: "1.0.0"
+servers:
+  - url: https://stripe.quickquote.example.com   # Sustituye por tu endpoint real
+paths:
+  /fee:
+    get:
+      summary: Obtiene comisión y neto.
+      parameters:
+        - in: query
+          name: amount
+          schema:
+            type: number
+            example: 100.00
+        - in: query
+          name: currency
+          schema:
+            type: string
+            example: EUR
+        - in: query
+          name: country
+          schema:
+            type: string
+            example: ES
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fee:
+                    type: number
+                  net:
+                    type: number

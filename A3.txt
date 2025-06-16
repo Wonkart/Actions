@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: StockImageDemand
+  description: Devuelve las imágenes más descargadas por categoría en Pexels en las últimas 24 h.
+  version: "1.0.0"
+servers:
+  - url: https://api.pexels.com/v1
+paths:
+  /curated:
+    get:
+      summary: Imágenes más populares.
+      parameters:
+        - in: query
+          name: per_page
+          schema:
+            type: integer
+            example: 15
+        - in: query
+          name: page
+          schema:
+            type: integer
+            example: 1
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  photos:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        url:
+                          type: string
+                        category:
+                          type: string
+                        downloads:
+                          type: integer

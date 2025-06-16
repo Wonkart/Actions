@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  title: TrendKeywordSearch
+  description: Devuelve las 10 keywords con mayor crecimiento en Google Trends para un país y sector durante las últimas 24 h.
+  version: "1.0.0"
+servers:
+  - url: https://trends.example.com          # Sustituye por tu endpoint real
+paths:
+  /top_growth:
+    get:
+      summary: Keywords en tendencia.
+      parameters:
+        - in: query
+          name: country
+          schema:
+            type: string
+            example: ES
+        - in: query
+          name: category
+          schema:
+            type: string
+            example: technology
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            example: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keywords:
+                    type: array
+                    items:
+                      type: string

@@ -1,0 +1,32 @@
+openapi: 3.1.0
+info:
+  title: FetchMarketFX
+  description: Devuelve tipos de cambio spot (base EUR) y precios BTC/ETH.
+  version: "1.0.0"
+servers:
+  - url: https://api.exchangerate.host
+paths:
+  /latest:
+    get:
+      summary: Tipos de cambio respecto a la divisa base.
+      parameters:
+        - in: query
+          name: base
+          schema:
+            type: string
+            example: EUR
+        - in: query
+          name: symbols
+          schema:
+            type: string
+            example: USD,GBP,BTC,ETH
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rates:
+                    type: object
