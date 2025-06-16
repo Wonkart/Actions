@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: QuickStripeQuote
   description: Calcula la comisión y el neto a recibir en una transacción Stripe.
