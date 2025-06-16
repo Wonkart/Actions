@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: TrendKeywordSearch
   description: Devuelve las 10 keywords con mayor crecimiento en Google Trends para un país y sector durante las últimas 24 h.
